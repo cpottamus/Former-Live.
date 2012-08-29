@@ -1,4 +1,4 @@
-
+   
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
@@ -26,27 +26,28 @@
 				</ul>
 			</div>
       <div id="content">
-  			
-
-<h1>Work</h1>
+  			<h1>Contact</h1>
 
 
-  <ul class="gallery">
-  
-    <li class="big">      
-      
-  
-      <div class="image-wrapper">
-        
-          <a href="/s/selected-work"><img alt="Black Masses" src="/fuckYou2.JPG"/></a>
-        
-      </div>
-      <p><a href="/s/selected-work">Selected Work</a></p>
-    </li>
-  
-  </ul>
-
-
+	<form action="/contact" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Z/HJW5ekS8j7PA1nedousJao+dShdy2eTTEoBJMkPZY=" /></div>
+	  <ol>
+	    <li>
+	      <label for="email">Email</label>
+	      <input id="email" name="email" size="35" type="text" value="" />
+	    </li>
+	    <li>
+	      <label for="subject">Subject</label>
+	      <input id="subject" name="subject" size="35" type="text" value="" />
+	    </li>
+	    <li>
+	      <label for="message">Message</label>
+	      <textarea cols="30" id="message" name="message" rows="7"></textarea>
+	    </li>
+	    <li class="submit">
+	      <input name="commit" type="submit" value="Send" /> or <a href="/">Cancel</a>
+	    </li>
+	  </ol>
+	</form>
       </div>
       <div id="bottom">
         
