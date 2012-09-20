@@ -38,21 +38,35 @@
 		</div>
                 <script type='text/javascript' charset='utf-8'>
                     $(document).ready(function(){
-                        $('#header').hover(showList, hideList);
+                        $('#header').stop(true, true).hover(showList, function(){
+                            if(!$('#header').hasClass("moving")){
+                                hideList();
+                            }else{
+                                setTimeout(function(){
+                                    hideList();},1500);
+                            }
                         
+                        });
                     });
                     
                     function showList() {
-                        $('#header #logo h1').animate({'width': '95%'}, 'slow');
-                        $('#links').stop().delay(750).animate({width: 'show'},'slow');
+                        $('#header').addClass("moving");
+                        $('#header #logo h1').stop(true,true).animate({width: '95%'}, 'slow', function(){
+                            $('#links').animate({width: 'show'}, 750, function(){ //maybe remove stop
+                                $('#header').removeClass()});});
+                        //$('#header #logo h1').animate({'width': '95%'}, 'slow');
+                        //$('#links').delay(750).animate({width: 'show'},'slow');
+                        //$('#header').removeClass();
                         
                     }
                     
                     function hideList() {
+                        $('#links').stop(true,true).animate({width: 'hide'},'slow', function(){
+                            $('#header #logo h1').delay(200).animate({'width':'118%'},'slow');}    );
                         
-                        $('#links').stop(true,true).animate({width: 'hide'},'slow');
-                        $('#header #logo h1').stop(true,true).delay(500).animate({'width':'118%'},'slow');
+                        
                     }
+                    
                 </script>
 		<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-20833334-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 	</body>
