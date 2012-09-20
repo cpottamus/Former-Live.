@@ -52,12 +52,8 @@
                     function showList() {
                         $('#header').addClass("moving");
                         $('#header #logo h1').stop(true,true).animate({width: '95%'}, 'slow', function(){
-                            $('#links').animate({width: 'show'}, 750, function(){ //maybe remove stop
+                            $('#links').animate({width: 'show'}, 750, function(){
                                 $('#header').removeClass()});});
-                        //$('#header #logo h1').animate({'width': '95%'}, 'slow');
-                        //$('#links').delay(750).animate({width: 'show'},'slow');
-                        //$('#header').removeClass();
-                        
                     }
                     
                     function hideList() {
